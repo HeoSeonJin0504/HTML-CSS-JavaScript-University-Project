@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴퓨터공학과 2051057 허선진 과제</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('imgs/wallpaper.jpg');
+            background-size: cover;
+            font-family: 'Gowun Dodum', serif;
+        }
+
+        .list {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lists {
+            text-align: center;
+            font-family: 'Gowun Dodum', serif;
+            display: block;
+            text-align: center;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 1.5;
+        }
+
+        .lists a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+
+        /* 상단바 */
+        .menu * {
+            display: inline;
+        }
+
+        .menu li {
+            margin: 100px;
+        }
+
+        .menu li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .menu ul {
+            padding-left: 0px;
+        }
+
+        .menu {
+            font-size: 25px;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+        }
+
+
+        /* 3페이지 */
+        h1 {
+            text-align: center;
+        }
+
+        .list_img {
+            width: 300px;
+            height: 300px;
+            display: block;
+            margin: 6vh 4vh;
+            margin-bottom: 50px;
+            border-radius: 10%;
+        }
+
+        .favorites {
+            display: inline-flex;
+            margin-top: 60px;
+        }
+
+
+        .move1 {
+            animation: move_picture 2s ease-out;
+        }
+
+        .move2 {
+            animation: move_picture 2.5s ease-out;
+        }
+
+        .move3 {
+            animation: move_picture 3s ease-out;
+        }
+
+        .move4 {
+            animation: move_picture 3.5s ease-out;
+        }
+
+
+        @keyframes move_picture {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+
+        /* 오른쪽 버튼 */
+        .scroll-btns {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 왼쪽 버튼 */
+        .scroll-btns2 {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+        }
+
+        /* 버튼 공동 속성 */
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .scroll-btn {
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="Main.html"><b>메인</b></a></li>
+            <li><a href="introduce.html"><b>소개</b></a></li>
+            <li><a href="favorite.html"><b>좋아하는 것</b></a></li>
+            <li><a href="gallery.html"><b>갤러리</b></a></li>
+        </ul>
+    </nav>
+
+    <div class="scroll-btns">
+        <div class="scroll-btn"><a href="Main.html">Main</a></div>
+        <div class="scroll-btn"><a href="introduce.html">Introduce</a></div>
+        <div class="scroll-btn"><a href="favorite.html">favorite</a></div>
+        <div class="scroll-btn"><a href="gallery.html">gallery</a></div>
+    </div>
+
+    <div class="scroll-btns2">
+        <div class="scroll-btn" id="prevBtn">이전 페이지</div>
+        <div class="scroll-btn" id="nextBtn">다음 페이지</div>
+    </div>
+
+    <div class="list">
+        <div>
+            <h1><br><br>💗 제가 좋아하는 것들입니다 💗</h1>
+            <div class="favorites">
+                <div class="lists move1">
+                    <img class="list_img" src="imgs/favorite1.jpg" alt="">
+                    <p>제가 유튜브에서 매일 시청하는<br>진도믹스 복순이 입니다!<br>
+                        <a href="https://youtube.com/@kangboksoon?si=Du_UNrqLIcrxHKap"
+                            target="_blank">👉유튜브채널바로가기🐶👈</a>
+                    </p>
+                </div>
+
+                <div class="lists move2">
+                    <img class="list_img" src="imgs/favorite2.jpg" alt="">
+                    <p>여행도 좋아합니다!🚗<br>(사진은 제주도입니다.)</p>
+                </div>
+
+                <div class="lists move3">
+                    <img class="list_img" src="imgs/favorite3.jpg" alt="">
+                    <p>코딩 문제 해결하는 것도 좋아하고😂</p>
+                </div>
+
+                <div class="lists move4">
+                    <img class="list_img" src="imgs/favorite4.png" alt="">
+                    <p>어렸을 때부터 좋아했던<br>짱구도 좋아합니다💗</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        const nextpage = ["gallery.html"];
+        const prevpage = ["introduce.html"]
+
+        // 이전 페이지 버튼
+        $('#prevBtn').on('click', function () {
+            window.location.href = prevpage[0];
+        });
+
+        // 다음 페이지 버튼
+        $('#nextBtn').on('click', function () {
+            window.location.href = nextpage[0];
+        });
+
+        // 스크롤 기능
+        $(window).on('wheel', function (e) {
+            if (e.originalEvent.deltaY > 0) {
+                // 아래로 스크롤 - 다음 페이지로 이동
+                window.location.href = nextpage[0];
+            } else {
+                // 위로 스크롤 - 이전 페이지로 이동
+                window.location.href = prevpage[0];
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴퓨터공학과 2051057 허선진 과제</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('imgs/wallpaper.jpg');
+            background-size: cover;
+            font-family: 'Gowun Dodum', serif;
+        }
+
+        h3 {
+            font-family: 'Gowun Dodum', serif;
+            color: #000000;
+            text-align: center;
+            font-weight: lighter;
+            margin-top: 50px;
+            font-size: 25px;
+        }
+
+        .list {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        /* 상단바 */
+        .menu * {
+            display: inline;
+        }
+
+        .menu li {
+            margin: 100px;
+        }
+
+        .menu li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .menu ul {
+            padding-left: 0px;
+        }
+
+        .menu {
+            font-size: 25px;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+        }
+
+        /* 1페이지 */
+        .one {
+            background-size: cover;
+            text-align: center;
+            padding-top: 180px;
+            padding-bottom: 130px;
+        }
+
+        .profile {
+            border-radius: 10%;
+            display: inline-block;
+            padding: 0.5rem;
+            margin-top: 50px;
+            border: 1px solid gray;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgb(255, 255, 255, 0.5);
+
+        }
+
+        .profile img {
+            border-radius: 10%;
+        }
+
+        /* 오른쪽 버튼 */
+        .scroll-btns {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 왼쪽 버튼 */
+        .scroll-btns2 {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+        }
+
+        /* 버튼 공동 속성 */
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .scroll-btn {
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="Main.html"><b>메인</b></a></li>
+            <li><a href="introduce.html"><b>소개</b></a></li>
+            <li><a href="favorite.html"><b>좋아하는 것</b></a></li>
+            <li><a href="gallery.html"><b>갤러리</b></a></li>
+        </ul>
+    </nav>
+
+    <div class="scroll-btns">
+        <div class="scroll-btn"><a href="Main.html">Main</a></div>
+        <div class="scroll-btn"><a href="introduce.html">Introduce</a></div>
+        <div class="scroll-btn"><a href="favorite.html">favorite</a></div>
+        <div class="scroll-btn"><a href="gallery.html">gallery</a></div>
+    </div>
+
+    <div class="scroll-btns2">
+        <div class="scroll-btn" id="prevBtn">이전 페이지</div>
+        <div class="scroll-btn" id="nextBtn">다음 페이지</div>
+    </div>
+
+
+    <div class="list">
+        <div class="one">
+            <span class="profile"><img src="imgs/1Page.gif" width="400px;" height="400px" alt="" /></span>
+            <h3><b>안녕하세요 2051057 허선진입니다</b>.<br>저의 홈페이지에 오신 걸 환영합니다.
+                <br>전체 화면으로 봐주시면 감사하겠습니다.
+                <br>*스크롤로도 페이지로 이동이 가능합니다.*
+            </h3>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="jquery.lightbox.js"></script>
+    <script>
+        const nextpage = ["introduce.html"];
+        const prevpage = ["gallery.html"]
+
+        // 이전 페이지 버튼
+        $('#prevBtn').on('click', function () {
+            window.location.href = prevpage[0];
+        });
+
+        // 다음 페이지 버튼
+        $('#nextBtn').on('click', function () {
+            window.location.href = nextpage[0];
+        });
+
+        // 스크롤 기능
+        $(window).on('wheel', function (e) {
+            if (e.originalEvent.deltaY > 0) {
+                // 아래로 스크롤 - 다음 페이지로 이동
+                window.location.href = nextpage[0];
+            } else {
+                // 위로 스크롤 - 이전 페이지로 이동
+                window.location.href = prevpage[0];
+            }
+        });
+    </script>
+</body>
+
+</html>

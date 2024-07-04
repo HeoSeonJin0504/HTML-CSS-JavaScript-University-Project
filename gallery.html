@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>컴퓨터공학과 2051057 허선진 과제</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="jquery.lightbox.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('imgs/wallpaper.jpg');
+            background-size: cover;
+            font-family: 'Gowun Dodum', serif;
+        }
+
+        .list {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        .lists {
+            text-align: center;
+            font-family: 'Gowun Dodum', serif;
+            display: block;
+            text-align: center;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 0.5;
+        }
+
+        /* 상단바 */
+        .menu * {
+            display: inline;
+        }
+
+        .menu li {
+            margin: 100px;
+        }
+
+        .menu li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .menu ul {
+            padding-left: 0px;
+        }
+
+        .menu {
+            font-size: 25px;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+        }
+
+        /* 4페이지 */
+
+        .four {
+            display: inline-flex;
+            margin-top: 60px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .list_img2 {
+            width: 350px;
+            height: 230px;
+            display: inline-flex;
+            margin: 7vh 5vh;
+            margin-bottom: 20px;
+            border-radius: 10%;
+        }
+
+        a.light {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* 4페이지 사진 애니메이션 */
+        .list_img2 {
+            animation: move_picture 4s ease-out;
+        }
+
+
+        @keyframes move_picture {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+
+            }
+        }
+
+        /* 오른쪽 버튼 */
+        .scroll-btns {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 왼쪽 버튼 */
+        .scroll-btns2 {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+        }
+
+        /* 버튼 공동 속성 */
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .scroll-btn {
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu"> <!--상단 메뉴-->
+        <ul>
+            <li><a href="Main.html"><b>메인</b></a></li>
+            <li><a href="introduce.html"><b>소개</b></a></li>
+            <li><a href="favorite.html"><b>좋아하는 것</b></a></li>
+            <li><a href="gallery.html"><b>갤러리</b></a></li>
+        </ul>
+    </nav>
+
+    <div class="scroll-btns"> <!--오른쪽 버튼-->
+        <div class="scroll-btn"><a href="Main.html">Main</a></div>
+        <div class="scroll-btn"><a href="introduce.html">Introduce</a></div>
+        <div class="scroll-btn"><a href="favorite.html">favorite</a></div>
+        <div class="scroll-btn"><a href="gallery.html">gallery</a></div>
+    </div>
+
+    <div class="scroll-btns2"> <!--왼쪽 버튼-->
+        <div class="scroll-btn" id="prevBtn">이전 페이지</div>
+        <div class="scroll-btn" id="nextBtn">다음 페이지</div>
+    </div>
+
+    <div class="list">
+        <div class="four">
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_1.jpg" alt="">
+                <p>전역 후 동기들과 강릉 여행🚌</p>
+                <a class="light" href="imgs/Page5_1.jpg">👉크게 보기👈</a>
+            </div>
+
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_2.jpg" alt="">
+                <p>친구들과 제주도 여행🛫</p>
+                <a class="light" href="imgs/Page5_2.jpg">👉크게 보기👈</a>
+            </div>
+
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_3.jpg" alt="">
+                <p>친구들과 부산 여행🚗</p>
+                <a class="light" href="imgs/Page5_3.jpg">👉크게 보기👈</a>
+            </div>
+
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_4.jpg" alt="">
+                <p>2023년 첫 눈❄️</p>
+                <a class="light" href="imgs/Page5_4.jpg">👉크게 보기👈</a>
+            </div>
+
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_5.jpg" alt="">
+                <p>본가에서 찍은 예쁜 벚꽃🌸</p>
+                <a class="light" href="imgs/Page5_5.jpg">👉크게 보기👈</a>
+            </div>
+
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_6.jpg" alt="">
+                <p>제주도에서의 먹방🍴</p>
+                <a class="light" href="imgs/Page5_6.jpg">👉크게 보기👈</a>
+            </div>
+
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_7.jpg" alt="">
+                <p>귀여운 이모댁 고양이💗</p>
+                <a class="light" href="imgs/Page5_7.jpg">👉크게 보기👈</a>
+            </div>
+
+            <div class="lists">
+                <img class="list_img2" src="imgs/Page5_8.jpg" alt="">
+                <p>도안고 근처 산책길 벚꽃💮</p>
+                <a class="light" href="imgs/Page5_8.jpg">👉크게 보기👈</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="jquery.lightbox.js"></script>
+    <script>
+        const page = ["gallery.html", "Main.html", "introduce.html", "favorite.html"];
+
+        let currentIndex = 0;
+
+        const nextpage = ["Main.html"];
+        const prevpage = ["favorite.html"]
+
+        // 이전 페이지 버튼
+        $('#prevBtn').on('click', function () {
+            window.location.href = prevpage[0];
+        });
+
+        // 다음 페이지 버튼
+        $('#nextBtn').on('click', function () {
+            window.location.href = nextpage[0];
+        });
+
+        // 스크롤 기능
+        $(window).on('wheel', function (e) {
+            if (e.originalEvent.deltaY > 0) {
+                // 아래로 스크롤 - 다음 페이지로 이동
+                window.location.href = nextpage[0];
+            } else {
+                // 위로 스크롤 - 이전 페이지로 이동
+                window.location.href = prevpage[0];
+            }
+        });
+
+        // Lightbox
+        $(document).ready(function () {
+            $('a.light').lightBox();
+        });
+    </script>
+</body>
+
+</html>

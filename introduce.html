@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴퓨터공학과 2051057 허선진 과제</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('imgs/wallpaper.jpg');
+            background-size: cover;
+            font-family: 'Gowun Dodum', serif;
+        }
+
+        h3 {
+            font-family: 'Gowun Dodum', serif;
+            color: #000000;
+            text-align: center;
+            font-weight: lighter;
+            margin-top: 50px;
+            font-size: 25px;
+        }
+
+        .list {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        /* 상단바 */
+        .menu * {
+            display: inline;
+        }
+
+        .menu li {
+            margin: 100px;
+        }
+
+        .menu li a {
+            color: #000000;
+            /* 검은색으로 수정 */
+            text-decoration: none;
+        }
+
+        .menu ul {
+            padding-left: 0px;
+        }
+
+        .menu {
+            font-size: 25px;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+        }
+
+        /* 2페이지 */
+        .two {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        .me {
+            order: 1;
+            margin-right: 200px;
+        }
+
+        .intext {
+            text-align: left;
+        }
+
+
+        /* 오른쪽 버튼 */
+        .scroll-btns {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 왼쪽 버튼 */
+        .scroll-btns2 {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-radius: 10px;
+        }
+
+        /* 버튼 공동 속성 */
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .scroll-btn {
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .scroll-btns .scroll-btn a {
+            color: #000000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="Main.html"><b>메인</b></a></li>
+            <li><a href="introduce.html"><b>소개</b></a></li>
+            <li><a href="favorite.html"><b>좋아하는 것</b></a></li>
+            <li><a href="gallery.html"><b>갤러리</b></a></li>
+        </ul>
+    </nav>
+
+    <div class="scroll-btns">
+        <div class="scroll-btn"><a href="Main.html">Main</a></div>
+        <div class="scroll-btn"><a href="introduce.html">Introduce</a></div>
+        <div class="scroll-btn"><a href="favorite.html">favorite</a></div>
+        <div class="scroll-btn"><a href="gallery.html">gallery</a></div>
+    </div>
+
+    <div class="scroll-btns2">
+        <div class="scroll-btn" id="prevBtn">이전 페이지</div>
+        <div class="scroll-btn" id="nextBtn">다음 페이지</div>
+    </div>
+
+    <div class="list">
+        <div class="two">
+            <img class="me" src="imgs/2Page.gif" alt="" width="500px;" height="500px">
+            <h3 class="intext"> <b>허선진 (許善眞)</b><br>Heo Seon Jin<br><br>
+                키: 176cm <br>
+                몸무게: 70kg <br>
+                생년월일: 2001년 5월 4일<br>
+                고향: 충청북도 영동군 영동읍<br>
+                전공: 목원대학교 컴퓨터공학과 <br>
+                전화번호: 010-3997-7872 <br><br>
+
+                홈페이지에 간단한 자기소개 및 앨범에 있는 사진을 넣었습니다.<br>
+                소개 PPT에 홈페이지의 간단한 설명이 있습니다.<br>
+                <br><br>
+                제 홈페이지를 봐주셔서 감사합니다!
+            </h3>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        const nextpage = ["favorite.html"];
+        const prevpage = ["Main.html"]
+
+        // 이전 페이지 버튼
+        $('#prevBtn').on('click', function () {
+            window.location.href = prevpage[0];
+        });
+
+        // 다음 페이지 버튼
+        $('#nextBtn').on('click', function () {
+            window.location.href = nextpage[0];
+        });
+
+        // 스크롤 기능
+        $(window).on('wheel', function (e) {
+            if (e.originalEvent.deltaY > 0) {
+                // 아래로 스크롤 - 다음 페이지로 이동
+                window.location.href = nextpage[0];
+            } else {
+                // 위로 스크롤 - 이전 페이지로 이동
+                window.location.href = prevpage[0];
+            }
+        });
+    </script>
+</body>
+
+</html>
